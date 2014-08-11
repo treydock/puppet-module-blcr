@@ -1,0 +1,29 @@
+{
+  "name": "treydock-blcr",
+  "version": "0.0.1",
+  "author": "treydock",
+  "summary": "blcr Puppet module",
+  "license": "Apache 2.0",
+  "source": "git://github.com/treydock/puppet-module-blcr.git",
+  "issues_url": "https://github.com/treydock/puppet-module-blcr/issues",
+  "project_page": "https://github.com/treydock/puppet-module-blcr",
+  "tags": [ "blcr", "redhat", "centos" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs-stdlib", "version_requirement": ">= 3.2.0 <5.0.0" }
+  ]
+}
+
