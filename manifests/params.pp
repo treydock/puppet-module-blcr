@@ -6,6 +6,7 @@ class blcr::params {
 
   $package_require  = undef
   $package_ensure   = 'present'
+  $install_modules  = true
   $install_dev      = true
   $service_ensure   = 'running'
   $service_enable   = true

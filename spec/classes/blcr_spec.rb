@@ -19,7 +19,7 @@ describe 'blcr' do
   include_context 'blcr::install'
   include_context 'blcr::service'
 
-  # Test validate_array parameters
+  # Test validate_bool parameters
   [
     :install_dev,
   ].each do |p|

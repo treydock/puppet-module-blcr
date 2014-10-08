@@ -27,4 +27,10 @@ shared_context "blcr::install" do
     it { should have_package_resource_count(2) }
     it { should_not contain_package('blcr-devel') }
   end
+
+  context 'when install_modules => false' do
+    let(:params) {{ :install_modules => false }}
+    it { should have_package_resource_count(2) }
+    it { should_not contain_package('blcr-modules') }
+  end
 end

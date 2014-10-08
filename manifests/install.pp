@@ -12,10 +12,12 @@ class blcr::install {
     require => $::blcr::package_require,
   }
 
-  package { 'blcr-modules':
-    ensure  => $::blcr::package_ensure,
-    name    => $::blcr::modules_package_name,
-    require => $::blcr::package_require,
+  if $::blcr::install_modules {
+    package { 'blcr-modules':
+      ensure  => $::blcr::package_ensure,
+      name    => $::blcr::modules_package_name,
+      require => $::blcr::package_require,
+    }
   }
 
   if $::blcr::install_dev {
