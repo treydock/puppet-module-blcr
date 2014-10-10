@@ -26,6 +26,13 @@ Install BLCR specifying your site's Yumrepo resource that contains the blcr RPMs
       package_require => Yumrepo['example'],
     }
 
+This is an example of using the blcr-dkms package instead of the blcr-modules package.
+
+    class { 'blcr':
+      package_require       => Yumrepo['example'],
+      modules_package_name  => 'blcr-dkms',
+    }
+
 ## Reference
 
 ### Classes
@@ -60,13 +67,25 @@ blcr package name.
 
 The 'blcr-modules' package name which is based off the `kernelrelease` fact.
 
+#####`libs_package_name`
+
+blcr-libs package name.
+
 #####`install_dev`
 
-Boolean.  Sets if the blcr-devel package should be installed (defaults to true).
+Boolean.  Determines if the blcr-devel package should be installed (defaults to true).
 
 #####`dev_package_name`
 
 blcr dev package name.
+
+#####`install_testsuite`
+
+Boolean.  Determines if the blcr-testsuite package should be installed (defaults to false).
+
+#####`testsuite_package_name`
+
+blcr-testsuite package name.
 
 #####`service_name`
 
@@ -79,6 +98,10 @@ blcr service 'ensure' property (defaults to 'running').
 #####`service_enable`
 
 blcr service 'enable' property (defaults to true).
+
+#####`service_autorestart`
+
+Boolean.  Determines if changes should restart the blcr service (defaults to true).
 
 #####`service_hasstatus`
 
@@ -114,6 +137,11 @@ Run unit tests
 If you have Vagrant >= 1.2.0 installed you can run system tests
 
     bundle exec rake beaker
+
+The following environment variables can be used to modify the behavior of the beaker tests:
+
+* *BEAKER_destroy* - Values are "yes" or "no" to prevent VMs from being destroyed after tests.  Defaults to **yes**.
+* *BEAKER\_blcr\_yumrepo\_baseurl* - **Required** URL to Yum repository containing BLCR RPMs.
 
 ## TODO
 
