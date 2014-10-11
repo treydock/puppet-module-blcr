@@ -33,6 +33,12 @@ This is an example of using the blcr-dkms package instead of the blcr-modules pa
       modules_package_name  => 'blcr-dkms',
     }
 
+This is an example of using Hiera to set the version of BLCR for packages including blcr-modules
+
+    blcr::modules_package_name: "blcr-modules_2.6.32-431.23.3.el6.x86_64-%{hiera('blcr::package_ensure')}.x86_64"
+    blcr::package_ensure: "0.8.5-1.el6"
+    blcr::package_require: 'Yumrepo[example]'
+
 ## Reference
 
 ### Classes
@@ -62,6 +68,10 @@ Package 'ensure' property (defaults to 'present').
 #####`package_name`
 
 blcr package name.
+
+#####`modules_package_ensure`
+
+Package 'ensure' property for blcr-modules (defaults to 'present').
 
 #####`modules_package_name`
 
