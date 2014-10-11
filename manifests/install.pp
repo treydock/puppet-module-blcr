@@ -5,7 +5,7 @@
 class blcr::install {
 
   package { 'blcr-modules':
-    ensure  => $blcr::package_ensure,
+    ensure  => $blcr::modules_package_ensure,
     name    => $blcr::modules_package_name,
     require => $blcr::package_require,
   }->

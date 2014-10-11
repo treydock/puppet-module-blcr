@@ -4,13 +4,14 @@
 #
 class blcr::params {
 
-  $package_require      = undef
-  $package_ensure       = 'present'
-  $install_dev          = true
-  $install_testsuite    = false
-  $service_autorestart  = true
-  $service_ensure       = 'running'
-  $service_enable       = true
+  $package_require        = undef
+  $package_ensure         = 'present'
+  $modules_package_ensure = 'present'
+  $install_dev            = true
+  $install_testsuite      = false
+  $service_autorestart    = true
+  $service_ensure         = 'running'
+  $service_enable         = true
 
   case $::osfamily {
     'RedHat': {

@@ -6,6 +6,7 @@ class blcr (
   $package_require        = $blcr::params::package_require,
   $package_ensure         = $blcr::params::package_ensure,
   $package_name           = $blcr::params::package_name,
+  $modules_package_ensure = $blcr::params::modules_package_ensure,
   $modules_package_name   = $blcr::params::modules_package_name,
   $libs_package_name      = $blcr::params::libs_package_name,
   $install_dev            = $blcr::params::install_dev,
